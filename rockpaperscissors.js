@@ -1,7 +1,7 @@
-let playerSelection = prompt("Would you like to choose rock, paper, or scissors?", " ");
-
-
-
+let playerSelection = prompt("Would you like to choose rock, paper, or scissors? ");   
+let computerSelection = getComputerChoice();
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
    const gameOptions = (Math.floor(Math.random() * 3));
@@ -16,101 +16,63 @@ function getComputerChoice() {
    };
 
 
-// function playRound(playerSelection, computerSelection) {
-
-//    if (playerSelection.toLowerCase() === computerSelection) {
-//       return "It's a tie!";
-//    } 
-   
-//    if (
-//       (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") ||
-//       (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") ||
-//       (playerSelection.toLowerCase() == "scissors" && computerSelection === "paper")
-//    ) {
-//       return "You win!";
-//     } else if {
-//       return "You lose!";
-//    } 
-   
-//    if (
-//      (computerSelection === "paper" && playerSelection === "rock") ||
-//      (computerSelection === "scissors" && playerSelection === "paper") ||
-//      (computerSelection === "rock" && playerSelection === "scissors") 
-//    ) {
-//       return "You lose!"; 
-//    } else if {
-//       return "You win!";
-//    } 
-// }
-
-
 function playRound(playerSelection, computerSelection) {
 
-   // if (playerSelection.toLowerCase() === computerSelection) {
-   //    return "It's a tie!";
-   // } 
-   // else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
-   //    return "you win!";
-   // }
-   // else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
-   //    return "you win!";
-   // }
-   // else if (playerSelection.toLowerCase() == "scissors" && computerSelection === "paper") {
-   //    return "you win!";
-   // }
-   // else if (playerSelection === "rock" && computerSelection === "paper") {
-   //    return "You lose!"
-   // }
-   // else if (playerSelection === "paper" && computerSelection === "scissors") {
-   //       return "You lose!"
-   // }
-   // else if (playerSelection === "scissors" && computerSelection === "rock") {
-   //    return "You lose!";
-   // }
-
-
-
-   if (playerSelection.toLowerCase() === "rock") {
+   if (playerSelection === "rock") {
       if (computerSelection === "paper") {
+         computerScore++;
          return "You lose!";
       } else if (computerSelection === "rock") {
          return "It's a tie!";
       } else if (computerSelection === "scissors") {
+         playerScore++;
          return "You win!";
       }
-   } else if (playerSelection.toLowerCase() === "paper") {
+   } else if (playerSelection === "paper") {
       if (computerSelection === "paper") {
          return "It's a tie!";
       } else if (computerSelection === "rock") {
+         playerScore++;
          return "You win!";
       } else if (computerSelection === "scissors") {
+         computerScore++;
          return "You lose!";
       }
-   } else if (playerSelection.toLowerCase() === "scissors") {
+   } else if (playerSelection === "scissors") {
       if (computerSelection === "scissors") {
          return "It's a tie!";
       } else if (computerSelection === "rock") {
+         computerScore++;
          return "You lose!";
       } else if (computerSelection === "paper") {
+         playerScore++;
          return "You win!";
       }
    } };
-// Add conditions for other player selections (scissors, etc.) if needed
+   console.log(playRound( playerSelection, computerSelection));
+console.log("Player choice: " + playerSelection.toLowerCase() + "\n" + "Computer choice: " + computerSelection);
 
 
-let computerSelection = getComputerChoice();
-console.log(computerSelection);
+// initialize initial scores
 
-console.log(playRound(playerSelection, computerSelection));
+// update the score when a player wins a round
 
-// let playerScore = 0;
-// let computerScore = 0;
+//when person wins game,add 1 point. when computer wins game, add point.
+//remember to display scores on screen
+//whoever has the most points out of 5, wins. end game.
+//game ends after 5 rounds and display final scores and declare winner
 
 
-// function game() {
-//    for (let i = 0; i <= 5; i++) {
-// }
-// }
-// console.log();
+function game() {
+
+   for(let i = 0; i < 6; i++) {
+   }
+}
+
+console.log("Player Score: " + playerScore + "\n" + "Computer Score: " + computerScore);
+
+
+
+
 
 
