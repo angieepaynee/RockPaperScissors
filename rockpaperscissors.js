@@ -12,7 +12,7 @@ function game() {
    const scoreElement = document.getElementById('scores');
    const resultsElement = document.getElementById('results');
    const choicesElement = document.getElementById('choices');
-   const winnerElement = document.createElement('div');
+   const winnerElement = document.getElementById('winner');
 
 
 
@@ -42,12 +42,17 @@ function game() {
          scoreElement.textContent = score;
          const result = playRound(playerSelection, computerSelection);
          resultsElement.textContent = result;
+   
+         const winnerResult = winner();
+
          winnerElement.textContent = winnerResult;
+
 
          document.body.appendChild(resultsElement);
          document.body.appendChild(choicesElement);
          document.body.appendChild(scoreElement);
          document.body.appendChild(winnerElement);
+
          
       });
 
@@ -62,6 +67,8 @@ function game() {
          choicesElement.textContent = choice;
          const result = playRound(playerSelection, computerSelection);
          resultsElement.textContent = result;
+         const winnerResult = winner();
+
          winnerElement.textContent = winnerResult;
          document.body.appendChild(resultsElement);
          document.body.appendChild(choicesElement);
@@ -81,6 +88,8 @@ function game() {
          choicesElement.textContent = choice;
          const result = playRound(playerSelection, computerSelection);
          resultsElement.textContent = result;
+         const winnerResult = winner();
+
          winnerElement.textContent = winnerResult;
          document.body.appendChild(resultsElement);
          document.body.appendChild(choicesElement);
@@ -127,27 +136,18 @@ function game() {
          }
       } };
 
-      
-   
-      
-   
-   
-   
-
    // deciding who is the winner
    function winner() {
-      if (playerScore > computerScore) {
+      if (playerScore > 5) {
          return "You win the game! Yay!";
-      }
-      else if (computerScore > playerScore) {
+      } else if (computerScore > 5) {
          return "Better luck next time";
       } else {
-         return "Nobody wins!"
+         return;
       }
-   } 
-   const winnerResult = winner();
 
-   
+   };
+
 
 };
 game();
