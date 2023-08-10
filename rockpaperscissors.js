@@ -13,10 +13,13 @@ function game() {
    const resultsElement = document.getElementById('results');
    const choicesElement = document.getElementById('choices');
    const winnerElement = document.getElementById('winner');
-   const winnerMessage = document.querySelector('winner');
-   const loserMessage = document.querySelector('loser');
-   document.body.appendChild(winnerMessage);
-   document.body.appendChild(loserMessage);
+   const wMessage = document.getElementById('winningMessage');
+   const lMessage = document.getElementById('losingMessage');
+   const tMessage = document.getElementById('tieMessage');
+   const tRound = document.getElementById('tieRound');
+   const wRound = document.getElementById('winRound');
+   const lRound = document.getElementById('loseRound');
+   
    //const buttons = document.querySelectorAll('.mainButtons');
 
 
@@ -106,7 +109,8 @@ function game() {
 
   
 
-   // play a round
+   // play a round. Make messages for winning and losing so that i can remove them from the dom when 
+   // I want to display the final winning/losing message
    function playRound(playerSelection, computerSelection) {
       computerSelection = getComputerChoice();
 
@@ -145,13 +149,15 @@ function game() {
    // deciding who is the winner. don't want a return statement since it stops code execution
    function winner() {
       if (playerScore > 5) {
-         return "You win the game! Yay!";
+         wMessage.textContent = "You win the game! Yay!";
       } else if (computerScore > 5) {
-         return "Better luck next time";
+         lMessage.textContent = "You have lost, better luck next time.";
       } else {
-         return;
+         tMessage.textContent = "Nobody wins, it's a tie!";
       }
    };
+
+   winner();
 
    //reset game
    function resetGame() {
