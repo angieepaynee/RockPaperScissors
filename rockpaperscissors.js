@@ -13,6 +13,11 @@ function game() {
    const resultsElement = document.getElementById('results');
    const choicesElement = document.getElementById('choices');
    const winnerElement = document.getElementById('winner');
+   const winnerMessage = document.querySelector('winner');
+   const loserMessage = document.querySelector('loser');
+   document.body.appendChild(winnerMessage);
+   document.body.appendChild(loserMessage);
+   //const buttons = document.querySelectorAll('.mainButtons');
 
 
 
@@ -44,7 +49,6 @@ function game() {
          resultsElement.textContent = result;
    
          const winnerResult = winner();
-
          winnerElement.textContent = winnerResult;
 
 
@@ -67,9 +71,10 @@ function game() {
          choicesElement.textContent = choice;
          const result = playRound(playerSelection, computerSelection);
          resultsElement.textContent = result;
+         
          const winnerResult = winner();
-
          winnerElement.textContent = winnerResult;
+
          document.body.appendChild(resultsElement);
          document.body.appendChild(choicesElement);
          document.body.appendChild(scoreElement);
@@ -88,9 +93,10 @@ function game() {
          choicesElement.textContent = choice;
          const result = playRound(playerSelection, computerSelection);
          resultsElement.textContent = result;
+         
          const winnerResult = winner();
-
          winnerElement.textContent = winnerResult;
+
          document.body.appendChild(resultsElement);
          document.body.appendChild(choicesElement);
          document.body.appendChild(scoreElement);
@@ -136,7 +142,7 @@ function game() {
          }
       } };
 
-   // deciding who is the winner
+   // deciding who is the winner. don't want a return statement since it stops code execution
    function winner() {
       if (playerScore > 5) {
          return "You win the game! Yay!";
@@ -145,17 +151,24 @@ function game() {
       } else {
          return;
       }
-
    };
 
+   //reset game
+   function resetGame() {
+      //reset all global variables
+      //remove all event listeners (make a list to loop through them?)
+      //calls the main game function when player wants to start again --- MAKE START BUTTON EVENTUALLY
+      
+      playerScore = 0;
+      computerScore = 0;
+      scoreElement.removeChild(scores);
+      resultsElement.removeChild(results);
+      choicesElement.removeChild(choices);
+   }
+   
 
 };
-game();
-
-
-   
-   // for(let i = 0; i < 5; i++) {
-    
+game();    
       
 
 
