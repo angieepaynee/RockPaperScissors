@@ -1,14 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+
+#buttonRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .mainButtons {
     background-color:#B0E0E6; 
+    font-weight: 900;
+    font-size: 64px;
+    text-shadow: 0 0 10px #04d9ff, 0 0 20px #04d9ff, 0 0 30px #04d9ff, 0 0 40px #04d9ff, 0 0 50px #04d9ff, 0 0 60px #04d9ff, 0 0 70px #04d9ff; 
+    padding: 10px;
+    text-transform: uppercase;
+    margin: 40px;
+    border-radius: 40px;
+    box-shadow: #04d9ff 0 0 40px 20px,
+    black 0 0 80px 40px;
+    border: 0.5px solid #04d9ff;
+
 }
 
-body {
-    background-color: #F0F8FF;
-    /* font-size: 36px; */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%; 
+    margin: 50px 100px; 
 }
 
-.new-Game {
-    background-color: #00BFFF;
+span {
+
+    color: black;
+    font-weight: 700;
+    font-size: 48px;
+    display: block;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    box-shadow: #04d9ff 0 0 40px 20px,
+    black 0 0 80px 40px;
+    text-shadow: 0 0 10px #04d9ff, 0 0 20px #04d9ff, 0 0 30px #04d9ff, 0 0 40px #04d9ff;
+    
 }
+
+#middleMessages {
+    display: flex;
+    color: whitesmoke;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 25px 100px;
+    text-align: center;
+    font-size: 48px;
+    text-shadow: 0 0 10px #04d9ff, 0 0 20px #04d9ff, 0 0 30px #04d9ff, 0 0 40px #04d9ff, 0 0 50px #04d9ff, 0 0 60px #04d9ff, 0 0 70px #04d9ff; 
+
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+
+
+
+
+
+
 

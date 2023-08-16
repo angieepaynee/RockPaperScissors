@@ -6,26 +6,42 @@
     <link rel="stylesheet" href="styles.css">
     <script src="rockpaperscissors.js" defer></script>
 <body>
-    <button id ="rock" class="mainButtons"> Rock</button>
-    <button id ="paper" class="mainButtons">Paper</button>
-    <button id ="scissors" class="mainButtons">Scissors</button>
-    <div id="results"></div>
-    <div id="choices">
-        <span id="player-choice">Player Choice: </span>
-        <span id="computer-choice">Computer Choice: </span>
+    <div id="buttonRow">
+        <button id ="rock" class="mainButtons"> Rock</button>
+        <button id ="paper" class="mainButtons">Paper</button>
+        <button id ="scissors" class="mainButtons">Scissors</button>
     </div>
-    <div id="scores">
-        <span id="player-score">Player Score: 0</span>
-        <span id="computer-score">Computer Score: 0</span>
+
+    <div id="middleMessages">
+        <div id="winner"></div>
+        <div id="winningMessage"></div>
+        <div id="losingMessage"></div>
+        <div id="tieMessage"></div>
+        <div id="results"></div>
+        <div id="buttonContainer"></div> 
+        <div id="roundWinner"></div>
+        <div id="roundLoser"></div>
+        <div id="roundTie"></div>
     </div>
-    <div id="winner"></div>
-    <div id="winningMessage"></div>
-    <div id="losingMessage"></div>
-    <div id="tieMessage"></div>
-    <div id="buttonContainer">
 
-    </div> 
+    <div id="choices" class="flex-container">
+        <div class="choice-container">
+            <span id="player-choice">Player Choice: </span>
+        </div>
+        <div class="choice-container">
+            <span id="computer-choice">Computer Choice: </span>
+        </div>
+    </div>
 
+
+    <div id="scores" class="flex-container">
+        <div class="score-container">
+         <span id="player-score">Player Score: 0</span>
+        </div>
+        <div class="score-container">
+         <span id="computer-score">Computer Score: 0</span>
+        </div>
+    </div>
 
 </body>
 </head>
